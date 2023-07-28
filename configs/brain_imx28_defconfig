@@ -1,0 +1,15 @@
+# architecture
+BR2_arm=y
+BR2_arm926t=y
+
+# Linux headers same as kernel, a 5.4 series
+BR2_KERNEL_HEADERS_5_4=y
+
+# system
+BR2_TARGET_GENERIC_GETTY_PORT="ttyAMA0"
+
+# Filesystem
+BR2_TARGET_ROOTFS_CPIO=y
+
+# To modify the rootfs
+BR2_ROOTFS_POST_FAKEROOT_SCRIPT="board/sharp/brain_imx28/pre-image.sh"

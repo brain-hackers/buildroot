@@ -1,0 +1,12 @@
+--- output/target/etc/inittab	2023-07-16 12:26:05.568408273 +0900
++++ output/target/etc/inittab	2023-07-16 12:25:56.896495356 +0900
+@@ -31,6 +31,9 @@
+ # Put a getty on the serial port
+ ttyAMA0::respawn:/sbin/getty -L  ttyAMA0 0 vt100 # GENERIC_SERIAL
+ 
++# And also for fbcon
++tty1::respawn:/sbin/getty -L  tty1 0 vt100
++
+ # Stuff to do for the 3-finger salute
+ #::ctrlaltdel:/sbin/reboot
+ 
