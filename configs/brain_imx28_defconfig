@@ -12,4 +12,5 @@ BR2_TARGET_GENERIC_GETTY_PORT="ttyAMA0"
 BR2_TARGET_ROOTFS_CPIO=y
 
 # To modify the rootfs
-BR2_ROOTFS_POST_FAKEROOT_SCRIPT="board/sharp/brain_imx28/pre-image.sh"
+BR2_ROOTFS_POST_BUILD_SCRIPT="board/sharp/brain_imx28/post-build.sh"
+BR2_ROOTFS_OVERLAY="../os-buildroot/override"
