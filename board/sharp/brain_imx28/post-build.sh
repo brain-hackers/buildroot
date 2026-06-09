@@ -8,6 +8,19 @@ append_inittab()
 	patch --forward -r - -p 0 < board/sharp/brain_imx28/inittab.patch || true
 }
 
+
+install_securetty()
+{
+	# BusyBox is compiled with CONFIG_FEATURE_SECURETTY=y.  Without /etc/securetty
+	# root login is silently denied on every terminal.  Create the file listing
+	# the consoles used on SHARP Brain devices.
+        cat > "${TARGET_DIR}/etc/securetty" <<'EOF'
+console
+tty1
+ttyAMA0
+EOF
+}
+
 promote_haveged_initscript()
 {
 	# haveged initializes at S21 by default. Move it to S10 so it starts before
@@ -18,6 +31,7 @@ promote_haveged_initscript()
 main()
 {
 	append_inittab
+	install_securetty
 	promote_haveged_initscript
 	exit $?
 }
