@@ -13,6 +13,9 @@ BR2_TARGET_GENERIC_GETTY_PORT="ttyAMA0"
 # and crng init done is delayed ~4 minutes, blocking the login prompt.
 BR2_PACKAGE_HAVEGED=y
 
+# keyoverlay: on-screen keymap overlay for the Brain keyboard.
+BR2_PACKAGE_KEYOVERLAY=y
+
 # Filesystem
 BR2_TARGET_ROOTFS_CPIO=y
 BR2_TARGET_ROOTFS_TAR=y
