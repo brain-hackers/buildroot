@@ -1,0 +1,8 @@
+config BR2_PACKAGE_KEYOVERLAY
+	bool "keyoverlay"
+	help
+	  On-screen keymap overlay for SHARP Brain devices. A tiny daemon
+	  that listens to the keyboard and, while a modifier is held, draws
+	  the matching key legend onto the framebuffer.
+
+	  https://github.com/tslmy/sharp-brain-keyboard-overlay
