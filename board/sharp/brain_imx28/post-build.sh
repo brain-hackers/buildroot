@@ -3,6 +3,7 @@
 append_inittab()
 {
 	if grep -q '^tty1::respawn:' "${TARGET_DIR}/etc/inittab"; then
+		sed -i '/^tty1::respawn:/s/vt100$/linux/' "${TARGET_DIR}/etc/inittab"
 		return 0
 	fi
 	# --forward: don't reverse-apply
